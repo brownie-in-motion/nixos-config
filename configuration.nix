@@ -59,15 +59,6 @@
         enable = true;
 	user = "daniel";
       };
-      # sessionCommands = ''
-      #   ${pkgs.xorg.xrdb}/bin/xrdb -merge <${pkgs.writeText "Xresources" ''
-      #     Xft.antialias: true
-      #     Xft.hinting: true
-      #     Xft.rgba: rgb
-      #     Xft.hintstyle: hintful
-      #     Xft.dpi: 220
-      #   ''}
-      # '';
     };
     windowManager.i3.enable = true;
     xkbOptions = "caps:ctrl_modifier";
