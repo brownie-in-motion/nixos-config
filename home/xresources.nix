@@ -1,0 +1,9 @@
+{
+  xresources.properties = {
+    "Xft.antialias" = true;
+    "Xft.hinting" = true;
+    "Xft.rgba" = "rgb";
+    "Xft.hintstyle" = "hintful";
+    "Xft.dpi" = 220;
+  };
+}
