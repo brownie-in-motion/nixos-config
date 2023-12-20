@@ -1,13 +1,20 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   xsession.windowManager.i3 = {
     enable = true;
     config = {
-      modifier = "Mod4";
+      defaultWorkspace = "1";
       focus = {
         followMouse = false;
       };
+      keybindings = lib.mkOptionDefault {
+        "Print" = "exec maim -su | xclip -selection clipboard -t image/png";
+        "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%+";
+        "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%-";
+        "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";
+      };
+      modifier = "Mod4";
       startup = [
         {
           always = true;
