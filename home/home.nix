@@ -26,11 +26,6 @@
     packages = with pkgs; [
       cachix
 
-      xclip
-      tmux
-      pulsemixer
-      htop
-
       google-chrome
 
       discord
@@ -40,12 +35,7 @@
 
       lutris
 
-      feh
-
       maim
-
-      mesa-demos
-      lshw
     ];
   };
 }

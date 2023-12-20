@@ -4,5 +4,6 @@
     ./kitty.nix
     ./neovim.nix
     ./programming.nix
+    ./utilities.nix
   ];
 }
