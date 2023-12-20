@@ -6,7 +6,6 @@
     lshw
     mesa-demos
     pulsemixer
-    tmux
     xclip
   ];
 }
