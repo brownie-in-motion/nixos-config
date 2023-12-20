@@ -1,9 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  nix.channel.enable = false;
-
   time.timeZone = "America/Los_Angeles";
+
+  nix.channel.enable = false;
+  nixpkgs.config.allowUnfree = true;
 
   users = {
     users.daniel = {
@@ -14,12 +15,26 @@
     };
     mutableUsers = false;
   };
-
+  security.sudo.wheelNeedsPassword = false;
   programs.fish.enable = true;
 
-  security.sudo.wheelNeedsPassword = false;
-
-  nixpkgs.config.allowUnfree = true;
+  # impermanence
+  # i dont want to touch hardware-config.nix so let's overwrite
+  fileSystems = lib.mkForce {
+    "/" = {
+      fsType = "tmpfs";
+      options = [ "size=2G" "mode=755" ];
+    };
+    ${config.persistentDir} = {
+      device = "/dev/disk/by-uuid/3c40ae84-cc0b-4ebc-8aad-d5200c85dc76";
+      fsType = "ext4";
+      neededForBoot = true;
+    };
+    "/nix" = {
+      device = "${config.persistentDir}/nix";
+      options = [ "bind" ];
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

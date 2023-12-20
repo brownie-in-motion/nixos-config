@@ -1,7 +1,11 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   environment = {
+    etc = {
+      "nixos/flake.nix".source = "${config.persistentDir}/home/daniel/.config/home-manager/flake.nix";
+    };
+
     systemPackages = with pkgs; [
       git
       neovim
