@@ -23,19 +23,6 @@
       gtk.enable = true;
     };
 
-    packages = with pkgs; [
-      cachix
-
-      google-chrome
-
-      discord
-      signal-desktop
-
-      gimp
-
-      lutris
-
-      maim
-    ];
+    packages = [ pkgs.cachix ];
   };
 }

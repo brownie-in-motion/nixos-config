@@ -30,5 +30,6 @@
 
   home.packages = [
     pkgs.feh
+    pkgs.maim
   ];
 }

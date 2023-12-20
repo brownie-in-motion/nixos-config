@@ -2,14 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    tmux
-
-    pulsemixer
-
-    xclip
-
-    mesa-demos
     bottom
     lshw
+    mesa-demos
+    pulsemixer
+    tmux
+    xclip
   ];
 }
