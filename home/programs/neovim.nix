@@ -18,4 +18,9 @@
       pkgs.nodePackages.pyright
     ];
   };
+
+  persist = [
+    ".config/nvim"
+    ".config/github-copilot"
+  ];
 }

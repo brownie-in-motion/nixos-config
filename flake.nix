@@ -24,6 +24,10 @@
           type = lib.types.str;
           default = primary;
         };
+        options.persist = lib.mkOption {
+          type = with lib.types; listOf str;
+          default = [];
+        };
       });
     in {
     nixosConfigurations = {

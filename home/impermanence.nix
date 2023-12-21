@@ -1,15 +1,14 @@
 { config, ... }:
 
+let
+  user = config.primary;
+  keep = config.persist;
+in
 {
-  home.persistence."/keep/home/${config.primary}" = {
-    directories = map (d: { directory = d; method = "symlink"; }) [
-      ".config/discord"
-      ".config/github-copilot"
-      ".config/google-chrome"
-      ".config/nvim"
-      ".config/spotify"
-      ".config/Signal"
-    ];
+  home.persistence."/keep/home/${user}" = {
+    directories = map (d: { directory = d; method = "symlink"; }) keep;
     allowOther = true;
   };
+
+  persist = [ ".config/git" ];
 }
