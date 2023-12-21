@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   services.xserver = {
     enable = true;
@@ -12,7 +14,7 @@
       sddm.enable = true;
       autoLogin = {
         enable = true;
-        user = "daniel";
+        user = config.primary;
       };
     };
 

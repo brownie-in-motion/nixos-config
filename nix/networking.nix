@@ -1,6 +1,8 @@
+{ config, ... }:
+
 {
   networking = {
-    hostName = "daniel";
+    hostName = config.primary;
     networkmanager.enable = true;
   };
 }

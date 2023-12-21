@@ -1,25 +1,27 @@
 { config, ... }:
 
 {
+  programs.fuse.userAllowOther = true;
   environment.persistence.${config.persistentDir} = {
     hideMounts = true;
     directories = [
       "/var/log"
       "/var/lib/bluetooth"
-      "/var/lib/nixos"
       "/var/lib/systemd"
       "/etc/NetworkManager/system-connections"
     ];
     files = [ "/etc/machine-id" ];
-    users.daniel = {
+    users.${config.primary} = {
       directories = [
         "media"
         "scripts"
         "stuff"
-        ".config/nvim"
+
+        ".cache"
+        ".local"
+
         ".config/fish"
         ".config/home-manager"
-        ".local/share/Steam"
         { directory = ".ssh"; mode = "0700"; }
       ];
     };

@@ -1,9 +1,12 @@
 { config, pkgs, ... }:
 
+let
+  inherit (config.users.users.${config.primary}) home;
+in
 {
   environment = {
     etc = {
-      "nixos/flake.nix".source = "${config.persistentDir}/home/daniel/.config/home-manager/flake.nix";
+      "nixos/flake.nix".source = "${home}/.config/home-manager/flake.nix";
     };
 
     systemPackages = with pkgs; [

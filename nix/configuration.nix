@@ -7,20 +7,20 @@
   nixpkgs.config.allowUnfree = true;
 
   users = {
-    users.daniel = {
+    users.${config.primary} = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
       password = "";
       shell = pkgs.fish;
     };
+    users.root.password = "";
     mutableUsers = false;
   };
   security.sudo.wheelNeedsPassword = false;
   programs.fish.enable = true;
 
   # impermanence
-  # i dont want to touch hardware-config.nix so let's overwrite
-  fileSystems = lib.mkForce {
+  fileSystems = {
     "/" = {
       fsType = "tmpfs";
       options = [ "size=2G" "mode=755" ];
