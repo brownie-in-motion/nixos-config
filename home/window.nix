@@ -4,7 +4,7 @@
   xsession.windowManager.i3 = {
     enable = true;
     config = {
-      defaultWorkspace = "Mod4+1";
+      defaultWorkspace = "workspace number 1";
       focus = {
         followMouse = false;
       };
