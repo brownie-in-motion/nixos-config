@@ -25,4 +25,6 @@
 
     packages = [ pkgs.cachix ];
   };
+
+  xdg.userDirs.download = "temp";
 }

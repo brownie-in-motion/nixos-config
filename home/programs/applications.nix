@@ -2,18 +2,18 @@
 
 {
   home.packages = with pkgs; [
+    anki
     discord
     gimp
     google-chrome
     lutris
     signal-desktop
-    spotify
+    xournalpp
   ];
 
   persist = [
     ".config/discord"
     ".config/google-chrome"
-    ".config/spotify"
     ".config/Signal"
   ];
 }

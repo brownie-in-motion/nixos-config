@@ -21,7 +21,7 @@
 
   # impermanence
   fileSystems = {
-    "/" = {
+    "/" = lib.mkForce {
       fsType = "tmpfs";
       options = [ "size=2G" "mode=755" ];
     };
@@ -33,6 +33,17 @@
     "/nix" = {
       device = "${config.persistentDir}/nix";
       options = [ "bind" ];
+    };
+  };
+
+  # convenience
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-uuid/4C3A-F314";
+    };
+    "/old" = {
+      device = "/dev/disk/by-uuid/b556b5e7-10a1-4b81-b05c-1a28714b67bc";
+      fsType = "ext4";
     };
   };
 

@@ -6,8 +6,8 @@
         follow = "mouse";
         width = 300;
         height = 300;
-        offset = "20x35";
-        origin = "top-right";
+        offset = "20x40";
+        origin = "bottom-right";
         transparency = 10;
         separator_height = 1;
         frame_width = 1;
