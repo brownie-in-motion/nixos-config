@@ -19,7 +19,7 @@
         {
           always = true;
           command = ''
-            feh --no-fehbg --bg-scale ~/media/images/background-among-us.png
+            feh --no-fehbg --bg-scale ~/media/images/crewmates.png
           '';
           notification = false;
         }

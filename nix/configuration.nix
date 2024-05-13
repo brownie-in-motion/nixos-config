@@ -2,14 +2,22 @@
 
 {
   time.timeZone = "America/Los_Angeles";
+  # time.timeZone = "America/New_York";
 
   nix.channel.enable = false;
   nixpkgs.config.allowUnfree = true;
 
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   users = {
     users.${config.primary} = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "docker" ];
       password = "";
       shell = pkgs.fish;
     };
@@ -23,7 +31,7 @@
   fileSystems = {
     "/" = lib.mkForce {
       fsType = "tmpfs";
-      options = [ "size=2G" "mode=755" ];
+      options = [ "size=4G" "mode=755" ];
     };
     ${config.persistentDir} = {
       device = "/dev/disk/by-uuid/3c40ae84-cc0b-4ebc-8aad-d5200c85dc76";

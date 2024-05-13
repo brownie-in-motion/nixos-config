@@ -27,4 +27,6 @@
   };
 
   xdg.userDirs.download = "temp";
+
+  persist = [ ".config/mimeapps.list" ];
 }

@@ -3,6 +3,7 @@
 {
   hardware = {
     bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;
 
     opengl = {
       enable = true;

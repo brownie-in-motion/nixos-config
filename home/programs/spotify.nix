@@ -6,7 +6,8 @@ let
     paths = [ pkgs.spotify ];
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
-      wrapProgram $out/bin/spotify --set HOME=${config.xdg.configHome}/spotify
+      wrapProgram $out/bin/spotify \
+        --set HOME "${config.xdg.configHome}/spotify/"
     '';
   };
 in

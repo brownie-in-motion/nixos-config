@@ -6,6 +6,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     impermanence.url = "github:nix-community/impermanence";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
@@ -28,6 +29,10 @@
           type = with lib.types; listOf str;
           default = [];
         };
+        options.hidpi = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
       });
     in {
     nixosConfigurations = {
@@ -38,6 +43,11 @@
           configModule
           home-manager.nixosModules.home-manager
           impermanence.nixosModules.impermanence
+          {
+            nixpkgs.overlays = [
+              inputs.neovim-nightly-overlay.overlay
+            ];
+          }
           {
             home-manager = {
               useGlobalPkgs = true;

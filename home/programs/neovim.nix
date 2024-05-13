@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.neovim = {
     enable = true;
+    package = pkgs.neovim-nightly;
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
       packer-nvim
@@ -15,7 +16,13 @@
     ];
     extraPackages = [
       pkgs.nodePackages.typescript-language-server
+      pkgs.nodePackages.prettier
       pkgs.nodePackages.pyright
+      pkgs.ltex-ls
+      pkgs.texlive.combined.scheme-full
+      pkgs.haskellPackages.haskell-language-server
+      pkgs.rust-analyzer
+      pkgs.ocamlPackages.ocaml-lsp
     ];
   };
 

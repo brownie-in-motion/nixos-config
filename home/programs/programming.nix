@@ -3,18 +3,28 @@
 {
   home.packages = with pkgs; [
     bun
+    cargo
+    cmake
     deno
-    nodejs_21
-
+    erlang
+    gcc
     ghc
     ghcid
-
-    python311Packages.python
-    python311Packages.pillow
-    python311Packages.requests
-    python311Packages.z3
-
-    ocaml
-    ocamlPackages.dune_3
+    gleam
+    gnumake
+    go
+    lean4
+    nodejs_20
+    (python311Packages.python.withPackages (p: [
+      p.openai
+      p.pillow
+      p.pwntools
+      p.matplotlib
+      p.requests
+      p.z3
+    ]))
+    ocaml-ng.ocamlPackages_5_1.ocaml
+    ocaml-ng.ocamlPackages_5_1.dune_3
+    solana-cli
   ];
 }
