@@ -10,6 +10,7 @@
     ./tmux.nix
     ./utilities.nix
     ./virt-manager.nix
+    ./vscode.nix
     ./zathura.nix
   ];
 }

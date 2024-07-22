@@ -13,6 +13,7 @@
     gleam
     gnumake
     go
+    jetbrains.goland
     lean4
     nodejs_20
     (python311Packages.python.withPackages (p: [

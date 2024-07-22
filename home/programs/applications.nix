@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     anki
     ardour
+    arduino
     audacity
     chromium
     discord
@@ -14,11 +15,14 @@
     inkscape
     insomnia
     musescore
+    obs-studio
     openshot-qt
+    osu-lazer-bin
     prismlauncher
     signal-desktop
     stepmania
     telegram-desktop
+    tiled
     vcv-rack
     vlc
     xournalpp
@@ -31,5 +35,6 @@
     ".config/Signal"
     ".steam"
     ".zotero"
+    ".arduino"
   ];
 }

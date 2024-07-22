@@ -15,6 +15,8 @@
       cmp-cmdline
     ];
     extraPackages = [
+      pkgs.ccls
+      pkgs.gopls
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.prettier
       pkgs.nodePackages.pyright

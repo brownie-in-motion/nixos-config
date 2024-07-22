@@ -9,6 +9,7 @@
       "/var/lib/bluetooth"
       "/var/lib/systemd"
       "/var/lib/libvirt"
+      "/var/lib/tailscale"
       "/etc/NetworkManager/system-connections"
     ];
     files = [ "/etc/machine-id" ];
