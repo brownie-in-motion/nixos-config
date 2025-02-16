@@ -35,7 +35,7 @@ in
     systemPackages = with pkgs; [
       git
       neovim
-      nvtop
+      nvtopPackages.full
     ];
 
     variables = if config.hidpi then {

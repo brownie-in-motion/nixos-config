@@ -4,25 +4,9 @@
   services.xserver = {
     enable = true;
     dpi = if config.hidpi then 220 else 108;
-
     xkb.options = "caps:ctrl_modifier,altwin:swap_alt_win";
-    libinput.touchpad.naturalScrolling = true;
-    libinput.touchpad.accelSpeed = "0.2";
-
-    wacom = {
-      enable = true;
-    };
-
+    wacom.enable = true;
     windowManager.i3.enable = true;
-    displayManager = {
-      defaultSession = "none+i3";
-      sddm.enable = true;
-      autoLogin = {
-        enable = true;
-        user = config.primary;
-      };
-    };
-
     videoDrivers = [ "nvidia" ];
   };
 
@@ -41,7 +25,8 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    enable = true;
+    type = "fcitx5";
     fcitx5.addons = with pkgs; [
         fcitx5-mozc
         fcitx5-gtk

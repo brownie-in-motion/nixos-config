@@ -7,6 +7,7 @@
     directories = [
       "/var/log"
       "/var/lib/bluetooth"
+      "/var/lib/nixos"
       "/var/lib/systemd"
       "/var/lib/libvirt"
       "/var/lib/tailscale"
