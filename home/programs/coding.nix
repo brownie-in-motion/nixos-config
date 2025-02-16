@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     bun
     cargo
+    cargo-bisect-rustc
     cmake
     deno
     erlang
@@ -16,7 +17,9 @@
     jetbrains.goland
     lean4
     nodejs_20
-    (python311Packages.python.withPackages (p: [
+    nodePackages.pnpm
+    (python312Packages.python.withPackages (p: [
+      p.genanki
       p.openai
       p.pillow
       p.pwntools
@@ -24,8 +27,10 @@
       p.requests
       p.z3
     ]))
+    poetry
     ocaml-ng.ocamlPackages_5_1.ocaml
     ocaml-ng.ocamlPackages_5_1.dune_3
     solana-cli
+    thonny
   ];
 }

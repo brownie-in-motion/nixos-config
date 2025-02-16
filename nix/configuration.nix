@@ -1,16 +1,24 @@
 { config, lib, pkgs, ... }:
 
 {
+  # time.timeZone = "Europe/Madrid";
   time.timeZone = "America/Los_Angeles";
   # time.timeZone = "America/New_York";
+  # time.timeZone = "America/Chicago";
+  # time.timeZone = "Asia/Singapore";
   # time.timeZone = "Europe/Paris";
   # time.timeZone = "Europe/London";
 
   nix.channel.enable = false;
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "openssl-1.1.1w"
+    ];
+  };
 
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -19,7 +27,7 @@
   users = {
     users.${config.primary} = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "docker" ];
+      extraGroups = [ "wheel" "dialout" "docker" ];
       password = "";
       shell = pkgs.fish;
     };
@@ -88,6 +96,15 @@
       fsType = "ext4";
     };
   };
+
+  fileSystems = {
+    "/encrypted" = {
+      device = "/dev/mapper/encrypted";
+      fsType = "ext4";
+    };
+  };
+
+  fonts.packages = [ pkgs.noto-fonts-cjk-sans ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

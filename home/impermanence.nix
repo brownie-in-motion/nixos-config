@@ -10,5 +10,10 @@ in
     allowOther = true;
   };
 
+  home.persistence."/encrypted" = {
+    directories = [ "work" ];
+    allowOther = true;
+  };
+
   persist = [ ".config/git" ];
 }

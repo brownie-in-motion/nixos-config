@@ -9,6 +9,7 @@
         prime.sync.enable = lib.mkForce false;
       };
       services.xserver.videoDrivers = lib.mkForce [ "nvidia" ];
+      services.picom.backend = lib.mkForce "glx";
       hardware.nvidia.forceFullCompositionPipeline = true;
       services.tlp = {
         enable = true;
@@ -34,6 +35,7 @@
         prime.sync.enable = lib.mkForce false;
       };
       services.xserver.videoDrivers = lib.mkForce [ "nvidia" ];
+      services.picom.backend = lib.mkForce "glx";
       hardware.nvidia.forceFullCompositionPipeline = true;
       hidpi = false;
     };
@@ -45,6 +47,7 @@
         prime.sync.enable = lib.mkForce false;
       };
       services.xserver.videoDrivers = lib.mkForce [ "nvidia" ];
+      services.picom.backend = lib.mkForce "glx";
       hardware.nvidia.forceFullCompositionPipeline = true;
 
       # always as if on battery (even when charging), so it doesn't draw too much current

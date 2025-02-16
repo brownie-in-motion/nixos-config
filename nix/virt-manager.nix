@@ -15,6 +15,7 @@
         }).fd];
       };
     };
+    onBoot = "start";
   };
   programs.virt-manager.enable = true;
   users.users.${config.primary}.extraGroups = [ "libvirtd" ];

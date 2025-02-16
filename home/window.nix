@@ -19,7 +19,7 @@
         {
           always = true;
           command = ''
-            feh --no-fehbg --bg-scale ~/media/images/crewmates.png
+            feh --no-fehbg --bg-scale ~/media/images/windows.jpg
           '';
           notification = false;
         }
@@ -31,5 +31,6 @@
   home.packages = [
     pkgs.feh
     pkgs.maim
+    pkgs.xclip
   ];
 }

@@ -27,6 +27,9 @@ in
         [Settings]
         gtk-application-prefer-dark-theme=1
       '';
+      crypttab.text = ''
+        encrypted UUID=1ba9ba7c-1046-4240-8a68-b4ccd815c0af /keep/encrypted.key
+      '';
     };
 
     systemPackages = with pkgs; [

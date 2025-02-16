@@ -4,16 +4,14 @@
   home.packages = with pkgs; [
     bottom
     bvi
-    cargo-bisect-rustc
+    cowsay
     cloudflared
     dig
-    dnsmasq
     exiftool
     ffmpeg
     gdb
     gef
     gifsicle
-    gthumb
     lshw
     mesa-demos
     mkcert
@@ -27,16 +25,16 @@
     pulsemixer
     powertop
     ripgrep
+    jadx
     sage
     scc
     sqlite
     unzip
-    xclip
+    wgcf
+    wireguard-tools
     xlayoutdisplay
     yt-dlp
     zip
     zsh
   ];
-
-  persist = [ ".docker/config.json" ];
 }

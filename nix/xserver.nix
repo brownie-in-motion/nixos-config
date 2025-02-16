@@ -7,7 +7,6 @@
 
     xkb.options = "caps:ctrl_modifier,altwin:swap_alt_win";
     libinput.touchpad.naturalScrolling = true;
-    # faster
     libinput.touchpad.accelSpeed = "0.2";
 
     wacom = {
@@ -24,7 +23,7 @@
       };
     };
 
-    videoDrivers = [ "intel" "nvidia" ];
+    videoDrivers = [ "nvidia" ];
   };
 
   # figure out how to do this properly
