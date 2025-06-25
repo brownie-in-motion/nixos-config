@@ -15,7 +15,8 @@ let
       libGL
       libGLU
       gcc
-      libstdcxx5
+      # this is gone now, fix later
+      # libstdcxx5
       zlib
     ];
 

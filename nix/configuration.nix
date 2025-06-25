@@ -6,6 +6,7 @@
   # time.timeZone = "America/New_York";
   # time.timeZone = "America/Chicago";
   # time.timeZone = "Asia/Singapore";
+  # time.timeZone = "Asia/Tokyo";
   # time.timeZone = "Europe/Paris";
   # time.timeZone = "Europe/London";
 
@@ -27,7 +28,7 @@
   users = {
     users.${config.primary} = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "dialout" "docker" ];
+      extraGroups = [ "wheel" "dialout" "docker" "video" ];
       password = "";
       shell = pkgs.fish;
     };

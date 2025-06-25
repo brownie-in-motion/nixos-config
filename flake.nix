@@ -6,9 +6,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     impermanence.url = "github:nix-community/impermanence";
+    razerdaemon.url = "github:JosuGZ/razer-laptop-control";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, impermanence, razerdaemon, ... }:
     let
       primary = "daniel";
       system = "x86_64-linux";
@@ -47,6 +48,7 @@
           configModule
           home-manager.nixosModules.home-manager
           impermanence.nixosModules.impermanence
+          razerdaemon.nixosModules.default
           {
             home-manager = {
               useGlobalPkgs = true;

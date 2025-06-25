@@ -18,5 +18,6 @@
     onBoot = "start";
   };
   programs.virt-manager.enable = true;
+  environment.systemPackages = [ pkgs.virtiofsd ];
   users.users.${config.primary}.extraGroups = [ "libvirtd" ];
 }

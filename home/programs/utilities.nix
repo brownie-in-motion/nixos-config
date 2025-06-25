@@ -5,6 +5,7 @@
     bottom
     bvi
     cowsay
+    comma
     cloudflared
     dig
     exiftool
@@ -26,6 +27,7 @@
     powertop
     ripgrep
     jadx
+    jujutsu
     sage
     scc
     sqlite
@@ -36,5 +38,9 @@
     yt-dlp
     zip
     zsh
+  ];
+
+  persist = [
+    ".config/jj"
   ];
 }

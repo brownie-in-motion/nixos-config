@@ -5,6 +5,8 @@
     ./coding.nix
     ./etterna.nix
     ./fish.nix
+    ./ingrid.nix
+    ./itgmania.nix
     ./kitty.nix
     ./neovim.nix
     ./spotify.nix

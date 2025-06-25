@@ -30,6 +30,7 @@
     poetry
     ocaml-ng.ocamlPackages_5_1.ocaml
     ocaml-ng.ocamlPackages_5_1.dune_3
+    sage
     solana-cli
     thonny
   ];

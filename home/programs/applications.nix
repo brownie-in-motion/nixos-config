@@ -24,12 +24,10 @@
       jdks = [ temurin-bin-21 ];
     })
     signal-desktop
-    stepmania
     syncplay
     telegram-desktop
     tiled
     transmission_4
-    vcv-rack
     vlc
     xournalpp
     zotero

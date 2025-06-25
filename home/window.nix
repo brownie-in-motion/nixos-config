@@ -13,6 +13,8 @@
         "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%+";
         "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%-";
         "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";
+        "XF86MonBrightnessUp" = "exec /home/daniel/scripts/brightness +30";
+        "XF86MonBrightnessDown" = "exec /home/daniel/scripts/brightness -30";
       };
       modifier = "Mod4";
       startup = [

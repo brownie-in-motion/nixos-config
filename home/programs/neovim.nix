@@ -25,6 +25,7 @@
       pkgs.rust-analyzer
       pkgs.ocamlPackages.ocaml-lsp
       pkgs.vscode-langservers-extracted
+      pkgs.yaml-language-server
     ];
   };
 

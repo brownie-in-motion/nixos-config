@@ -39,8 +39,9 @@ in
     ];
 
     variables = if config.hidpi then {
-      GDK_SCALE = "2";
-      GDK_DPI_SCALE = "0.5";
+      # new update made things weird
+      # GDK_SCALE = "2";
+      # GDK_DPI_SCALE = "0.5";
       _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
     } else {};
   };

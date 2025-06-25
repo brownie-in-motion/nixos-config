@@ -26,5 +26,10 @@
 
       package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
+
+    openrazer = {
+      enable = true;
+      users = [ config.primary ];
+    };
   };
 }

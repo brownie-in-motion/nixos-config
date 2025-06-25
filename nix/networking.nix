@@ -10,6 +10,10 @@
     # extraHosts = ''
     #   184.72.58.228 sicer
     # '';
+    # leak.town
+    extraHosts = ''
+      184.72.58.228 sicer
+    '';
   };
 
   services.resolved.enable = true;
