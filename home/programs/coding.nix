@@ -26,6 +26,7 @@
       p.matplotlib
       p.requests
       p.z3
+      p.z3-solver
     ]))
     poetry
     ocaml-ng.ocamlPackages_5_1.ocaml
